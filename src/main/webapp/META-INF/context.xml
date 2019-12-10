@@ -1,0 +1,4 @@
+<Context>
+  <Realm className="org.apache.catalina.realm.MemoryRealm"
+         pathname="/home/sandwitchy/workplace/eclipse-workspace/projet/reservation-salle/src/main/webapp/META-INF/tomcat-users.xml"/>
+</Context>

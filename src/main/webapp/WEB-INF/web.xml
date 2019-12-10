@@ -32,4 +32,26 @@
         <servlet-name>jsp</servlet-name>
         <url-pattern>/WEB-INF/views/*</url-pattern>
     </servlet-mapping>
+    
+      <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Zone privée</web-resource-name>
+      <url-pattern>/</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>Zone avec accès restreint</realm-name>
+  </login-config>
+
+  <security-role>
+    <role-name>admin</role-name>
+  </security-role>
 </web-app>
