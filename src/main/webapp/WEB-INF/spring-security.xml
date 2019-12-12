@@ -18,8 +18,8 @@
 			  <password-encoder ref="encoder" />
 			  <user-service>
 			  	<!-- mot de passe encrypter en bcrypt => 123456 -->
-			  	<!-- pour changer le mot de passe, généré un nouveau hash avec le lien : https://www.bcrypt.fr/ et inséré le hashcode du mot de 
-			  	pass voulut -->
+			  	<!-- pour changer le mot de passe, généré un nouveau hash avec le lien : https://www.bcrypt.fr/ et 
+			  	inséré le hashcode du mot de pass voulut -->
 				<user name="user" password="$2y$10$OvOW71kG4us9RRIQYYxhGOZrqsCrikOoEWuMkijE6/e7s8HcPefE2" authorities="ROLE_USER" />
 			  </user-service>
 		</authentication-provider>
