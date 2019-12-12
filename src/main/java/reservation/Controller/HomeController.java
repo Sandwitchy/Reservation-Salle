@@ -17,11 +17,6 @@ public class HomeController {
 		model.setViewName("accueil");
 		return model;
 	}
-	@GetMapping("/accessdenied")
-	public RedirectView denied(ModelMap model) {
-		model.addAttribute("error", "Les informartions entrées sont soit fausse soit incorrect. Veuillez recommencez.");
-		return new RedirectView("login");
-	}
 	@GetMapping("/admin")
 	public ModelAndView adminPage() {
 
@@ -33,18 +28,25 @@ public class HomeController {
 		return model;
 
 	}
+
+	@GetMapping("/accessdenied")
+	public RedirectView denied(ModelMap model) {
+		model.addAttribute("error", "Les informations entrées sont soit fausse soit incorrect. Veuillez recommencez.");
+		return new RedirectView("login");
+	}
 	@GetMapping("/logout")
-    public String logout(ModelMap model) {
-        return "accueil";
+    public RedirectView logout(ModelMap model) {
+		model.addAttribute("logout", "Vous avez bien été déconnecté");
+		return new RedirectView("login");
     }
 	//Spring Security see this :
 	@GetMapping("/login")
     public String login(Model model, String error, String logout) {
         if (error != null)
-            model.addAttribute("error", "Your username and password is invalid.");
+            model.addAttribute("error", error);
 
         if (logout != null)
-            model.addAttribute("message", "You have been logged out successfully.");
+            model.addAttribute("msg", logout);
 
         return "login";
     }
