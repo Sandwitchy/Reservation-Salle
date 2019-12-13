@@ -10,8 +10,7 @@
 <title>Admin</title>
 </head>
 <body>
-	<h1>Title : ${title}</h1>
-	<h1>Message : ${message}</h1>
+	<h1>Page d'administration</h1>
 
 	<c:url value="/logout" var="logoutUrl" />
 
