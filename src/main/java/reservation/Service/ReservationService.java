@@ -2,11 +2,10 @@ package reservation.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
 import reservation.Dao.ReservationDao;
 import reservation.Model.Participant;
 import reservation.Model.Reservation;
@@ -18,7 +17,7 @@ public class ReservationService {
 	@Autowired
 	private ReservationDao reservationDao;
 	
-	@Transactional(propagation = Propagation.REQUIRED)
+	@Transactional()
 	public Reservation reserver(ReservationsDto reservationDto) {
 		
 		Reservation reservation = new Reservation(reservationDto.getDateDebut(),
@@ -39,7 +38,7 @@ public class ReservationService {
 		return reservation;
 	}
 	
-	@Transactional(readOnly = true)
+	@Transactional()
 	public List<Reservation> getAll() {
 		return reservationDao.getAll();
 	}

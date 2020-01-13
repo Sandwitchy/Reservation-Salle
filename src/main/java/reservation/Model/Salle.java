@@ -1,4 +1,4 @@
-/*
+
 package reservation.Model;
 
 import javax.persistence.Entity;
@@ -20,4 +20,3 @@ public class Salle {
 		this.numeroSalle = numeroSalle;
 	}
 }
-*/
