@@ -9,6 +9,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class HomeController {
+	
 	@GetMapping({"/", "/accueil"})
 	public String accueil() {
 		return "accueil";
