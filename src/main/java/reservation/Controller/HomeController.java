@@ -9,14 +9,11 @@ import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class HomeController {
-	@GetMapping({"/","/welcome"})
-	public ModelAndView welcomePage() {
-		ModelAndView model = new ModelAndView();
-		model.addObject("title", "Spring Security Custom Login Form");
-		model.addObject("message", "This is welcome page!");
-		model.setViewName("accueil");
-		return model;
+	@GetMapping({"/", "/accueil"})
+	public String accueil() {
+		return "accueil";
 	}
+	
 	@GetMapping("/admin")
 	public ModelAndView adminPage() {
 
