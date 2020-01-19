@@ -10,16 +10,16 @@ import reservation.Model.Reservation;;
 
 @Repository
 public class ReservationDao {
-	
+
 	@PersistenceContext
 	private EntityManager em;
-	
+
 	public void save(Reservation reservation) {
 		em.persist(reservation);
 	}
-	
+
 	public List<Reservation> getAll() {
-		return em.createQuery("select i from Reservation i order by i.date desc", Reservation.class)
-				 .getResultList();
+		return em.createQuery("select r from Reservation r order by r.dateDebut desc", Reservation.class)
+				.getResultList();
 	}
 }

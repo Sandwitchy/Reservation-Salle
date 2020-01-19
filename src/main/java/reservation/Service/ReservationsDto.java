@@ -1,34 +1,40 @@
 package reservation.Service;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.validation.constraints.*;
+import javax.validation.Valid;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 public class ReservationsDto {
 
-	@NotNull(message = "Vous devez renseigner une date de debut !")
+	@NotEmpty(message = "Vous devez renseigner une date de debut.")
 	private String dateDebut;
 
-	@NotNull(message = "Vous devez renseigner la duree !")
+	@NotNull(message = "Vous devez renseigner la duree.")
 	private int duree;
-	
+
+	@NotEmpty(message = "Veuillez renseigner un nom.")
 	private String nom;
-	private String description;
+
 	private String salle;
-	private List<String> participants = new ArrayList<>();
+
+	@NotEmpty(message = "Veuillez renseigner une description.")
+	private String description;
+
+
+	@NotEmpty(message = "Veuillez renseigner au moin un participants.")
+	private List<String> participants;
 	
 	public List<String> getParticipants() {
 		return participants;
 	}
 	public void setParticipants(List<String> participants) {
 		this.participants = participants;
-	}
-	public String getSalle() {
-		return salle;
-	}
-	public void setSalle(String salle) {
-		this.salle = salle;
 	}
 
 	public String getDateDebut() {
@@ -57,10 +63,15 @@ public class ReservationsDto {
 	public int getDuree() {
 		return duree;
 	}
-
 	public void setDuree(int duree) {
 		this.duree = duree;
 	}
-	
 
+	public String getSalle() {
+		return salle;
+	}
+
+	public void setSalle(String salle) {
+		this.salle = salle;
+	}
 }

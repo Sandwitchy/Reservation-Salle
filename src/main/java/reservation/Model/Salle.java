@@ -1,4 +1,3 @@
-/*
 package reservation.Model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,5 +16,12 @@ public class Salle {
 	public Salle(String numeroSalle) {
 		this.numeroSalle = numeroSalle;
 	}
+
+    public String getNumeroSalle() {
+        return numeroSalle;
+    }
+
+    public void setNumeroSalle(String numeroSalle) {
+        this.numeroSalle = numeroSalle;
+    }
 }
-*/

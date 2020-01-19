@@ -9,7 +9,7 @@
 	<context:component-scan base-package="reservation.Controller" />
 	<mvc:default-servlet-handler />
 	<mvc:annotation-driven />
-	<mvc:resources mapping="/assets/**" location="/assets/" />
+	<mvc:resources mapping="assets/*" location="assets" />
 	<mvc:view-resolvers>
 		<mvc:jsp prefix="/WEB-INF/views/" suffix=".jsp" />
 	</mvc:view-resolvers>
